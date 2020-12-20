@@ -1,40 +1,592 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>Git Basics</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Git Basics</h1>
+          <img src="/assets/images/git-logo.jpg" alt="" />
+          <p>@stacknerds.com</p>
+        </section>
+        <section>
+          <h2>Background</h2>
+          <p>
+            Before we dive into what git is, we need to get a proper
+            understanding of what is a <b>version control system</b> and the
+            various types. Looking at what makes git stand out.
+          </p>
+        </section>
+        <section>
+          <h2>Version Control System [VCS]</h2>
+          <p>
+            Version control is simply a system that records changes to a file or
+            set of files over time so that you can recall specific versions
+            later.
+          </p>
+        </section>
+        <section>
+          <h2>Types of most popular VCS</h2>
+          <p>
+            Version control is simply a system that records changes to a file or
+            set of files over time so that you can recall specific versions
+            later.
+          </p>
+          <h2></h2>
+        </section>
+        <section>
+          <section>
+            <h2>Types of most popular VCS</h2>
+            <ol>
+              <li>
+                Centralized VCS: contain just one repository and each user gets
+                their own working copy. Example here include: Subversion and
+                Team Foundation Server by Microsoft
+              </li>
+              <p>
+                Not good because if the main repository is down everything goes
+                down.
+              </p>
+            </ol>
+            <a href="#" class="navigate-down">
+              <img
+                class="r-frame"
+                style="background: rgba(255, 255, 255, 0.1)"
+                width="100"
+                height="100"
+                data-src="https://static.slid.es/reveal/arrow.png"
+                alt="Down arrow"
+              />
+            </a>
+          </section>
+          <section>
+            <ol start="2">
+              <li>
+                Distributed VCS: contain multiple repositories. Each user has
+                their own repository and working copy. Example include: Git,
+                Mercurial
+              </li>
+            </ol>
+            <a href="#/4" class="navigate-down">
+              <img
+                class="r-frame"
+                style="background: rgba(255, 255, 255, 0.1)"
+                width="100"
+                height="100"
+                data-src="https://static.slid.es/reveal/arrow.png"
+                alt="Down arrow"
+              />
+            </a>
+          </section>
+          <section>
+            <p>
+              Git is the most popular VCS in the world today because of the
+              following:
+            </p>
+            <ol>
+              <li>It’s free</li>
+              <li>Open-source</li>
+              <li>Super Fast most especially in branching and merging</li>
+              <li>Scalable</li>
+            </ol>
+            <br />
+            <a href="#/4/1">
+              <img
+                class="r-frame"
+                style="
+                  background: rgba(255, 255, 255, 0.1);
+                  transform: rotate(180deg);
+                "
+                width="100"
+                height="100"
+                data-src="https://static.slid.es/reveal/arrow.png"
+                alt="Up arrow"
+              />
+            </a>
+          </section>
+        </section>
+        <section>
+          <h2>What is Git</h2>
+          <p>
+            Git is a version-control system for tracking changes in computer
+            files and coordinating work on those files among multiple people.
+          </p>
+        </section>
+        <section>
+          <h2>Importance of GIT</h2>
+          <p>
+            Git helps you keep track of the changes you make to your code. If at
+            any point while coding you hit a fatal error and don’t know what’s
+            causing it you can always revert back to the stable state.
+          </p>
+        </section>
+        <section>
+          <h2>Importance of GIT</h2>
+          <p>
+            Git also helps you <strong>synchronize code </strong> between
+            multiple people. So imagine you and your friend are collaborating on
+            a project. You both are working on the same project files. Now Git
+            takes those changes you and your friend made independently and
+            merges them into a single <strong>“master”</strong> repository.
+            Collaborating long-distance becomes very easy.
+          </p>
+        </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        <section>
+          <section>
+            <h2>Git Workflow</h2>
+            <p>
+              Before we start working with Git commands, it is necessary that
+              you understand what it represents.
+            </p>
+            <img
+              src="/assets/images/git2.png"
+              width="800px"
+              height="350px"
+              alt=""
+            />
+            <p>Simple Git Workflow</p>
+          </section>
+          <section>
+            <p>
+              A repository a.k.a repo is nothing but a collection of source
+              code.
+            </p>
+            <br />
+            <a href="#/8">
+              <img
+                class="r-frame"
+                style="
+                  background: rgba(255, 255, 255, 0.1);
+                  transform: rotate(180deg);
+                "
+                width="100"
+                height="100"
+                data-src="https://static.slid.es/reveal/arrow.png"
+                alt="Up arrow"
+              />
+            </a>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>
+              A file in your working directory can be three possible states
+            </h2>
+            <ol>
+              <li>
+                <b>Staged: </b> means files with the updated changes are marked
+                to be committed to the local repository but not yet committed.
+              </li>
+              <li>
+                <b>Modified: </b>This is when files with the updated changes are
+                staged but not yet committed to the local repository.
+              </li>
+            </ol>
+            <a href="#" class="navigate-down">
+              <img
+                class="r-frame"
+                style="background: rgba(255, 255, 255, 0.1)"
+                width="108"
+                height="128"
+                data-src="https://static.slid.es/reveal/arrow.png"
+                alt="Down arrow"
+              />
+            </a>
+          </section>
+
+          <section>
+            <ol start="3">
+              <li>
+                Unmodified: This is when the files in the working directory
+                correspond to those in the local repository.
+              </li>
+              <li>
+                Committed: This is when the changes you made to your files are
+                safely stored in the local repository
+              </li>
+            </ol>
+            <a href="#/9">
+              <img
+                class="r-frame"
+                style="
+                  background: rgba(255, 255, 255, 0.1);
+                  transform: rotate(180deg);
+                "
+                width="100"
+                height="100"
+                data-src="https://static.slid.es/reveal/arrow.png"
+                alt="Up arrow"
+              />
+            </a>
+          </section>
+        </section>
+        <section>
+          <h2>Some Basic commands</h2>
+          <ol>
+            <li>
+              <b>git add :</b> is a command used to add a file that is in the
+              working directory to the staging area.
+            </li>
+            <li>
+              <b>git commit: </b> is a command used to add all files that are
+              staged to the local repository.
+            </li>
+          </ol>
+        </section>
+        <section>
+          <h2>Some Basic commands continued</h2>
+          <ol start="3">
+            <li>
+              <b>git push </b>is a command used to add all committed files in
+              the local repository to the remote repository. So in the remote
+              repository, all files and changes will be visible to anyone with
+              access to the remote repository.
+            </li>
+            <li>
+              <b>git fetch</b> is a command used to get files from the remote
+              repository to the local repository but not into the working
+              directory.
+            </li>
+          </ol>
+        </section>
+        <section>
+          <h2>Some Basic commands continued....</h2>
+          <ol start="5">
+            <li>
+              <b>git merge</b> is a command used to get the files from the local
+              repository into the working directory.
+            </li>
+            <li>
+              <b>git pull</b> is the command used to get files from the remote
+              repository directly into the working directory. It is equivalent
+              to a git fetch and a git merge
+            </li>
+          </ol>
+        </section>
+        <section>
+          <h2>Getting Started</h2>
+          <p>Prerequisite for getting started are:</p>
+          <ul>
+            <li>Basic knowledge on how to use the terminal</li>
+            <li>A <b>GitHub</b> account for learning purpose</li>
+            <li>Being inquisitive and open to learn</li>
+          </ul>
+          <p>
+            <b>NB :</b> For all the commands we will be using, all text after
+            the “#” will be considered as a comment. Thanks
+          </p>
+        </section>
+        <section>
+          <section>
+            <h2>Git Installation</h2>
+            <p>
+              We are now going to look up how git installation is for operating
+              systems like Windows, Linux, and Mac.
+            </p>
+            <a href="#" class="navigate-down">
+              <img
+                class="r-frame"
+                style="background: rgba(255, 255, 255, 0.1)"
+                width="108"
+                height="128"
+                data-src="https://static.slid.es/reveal/arrow.png"
+                alt="Down arrow"
+              />
+            </a>
+          </section>
+          <section>
+            <h2>Linux</h2>
+            <p>
+              If you want to install the basic Git tools on Linux via a binary
+              installer, you can generally do so through the package management
+              tool that comes with your distribution.
+            </p>
+            <a href="#" class="navigate-down">
+              <img
+                class="r-frame"
+                style="background: rgba(255, 255, 255, 0.1)"
+                width="108"
+                height="128"
+                data-src="https://static.slid.es/reveal/arrow.png"
+                alt="Down arrow"
+              />
+            </a>
+          </section>
+          <section>
+            <p>
+              If you’re on Fedora (or any closely-related RPM-based
+              distribution, such as RHEL or CentOS), you can use <b>dnf</b>:
+            </p>
+            <section>
+              <pre><code data-trim data-noescape>
+						$ sudo dnf install git-all
+							</code></pre>
+            </section>
+            <p>
+              If you’re on a Debian-based distribution, such as Ubuntu, try apt:
+            </p>
+            <section>
+              <pre><code data-trim data-noescape>
+
+							$ sudo apt install git-all
+						</code></pre>
+            </section>
+          </section>
+        </section>
+        <section>
+          <h2>Mac</h2>
+          <p>
+            There are several ways to install Git on a Mac. The easiest is
+            probably to install the Xcode Command Line Tools. On Mavericks
+            (10.9) or above you can do this simply by trying to run git from the
+            Terminal the very first time.
+          </p>
+          <br />
+          <section>
+            <br />
+            <br />
+            <pre><code data-trim data-noescape>
+						$ git version
+					</code></pre>
+          </section>
+        </section>
+        <section>
+          <h2>Windows</h2>
+          <p>
+            To install git for windows follow this installation win
+            <a href="https://git-scm.com/download/" target="_blank">Link</a>
+          </p>
+          <p>
+            To check your git version when installed, run the following command:
+          </p>
+          <section>
+            <br />
+            <br />
+            <pre><code data-trim data-noescape>
+						$ git version
+					</code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Git Configuration</h2>
+            <p>The configuration is at the following levels:</p>
+            <ol>
+              <li><b>System</b>: This for all the users of your PC.</li>
+              <li><b>Global</b>: All the repositories for the current user.</li>
+              <li><b>Local</b>: The configuration here is per repository.</li>
+            </ol>
+            <p>
+              For our use case, we will be configuring git at the global level.
+            </p>
+          </section>
+          <section>
+            <h2>Name</h2>
+            <section>
+              <pre><code data-trim data-noescape>
+							$ git config --global user.name “Rash Gomez”
+						</code></pre>
+			</section>
+			<br>
+			<!-- <hr> -->
+            <h2>Email</h2>
+            <section>
+              <pre><code data-trim data-noescape>
+							$ git config --global user.email rash@gmail.com
+						</code></pre>
+			</section>
+			<br>
+            <h2>Default Editor</h2>
+            <pre><code data-trim data-noescape>
+						$ git config --global user.email rash@gmail.com
+					</code></pre>
+          </section>
+		</section>
+		<section>
+		  <h2>Here we configure vscode as our default git editor</h2>
+		  <br>	
+		  <p><b>How git should handle end of lines </b></p>
+		  <br>
+              <pre><code data-trim data-noescape>
+							$ git config --global core.autocrlf input
+						</code></pre>
+		</section>
+			<section>
+				<h2>On windows end of lines are marked with two special characters which are:
+				</h2>
+				<ul>
+					<li>\r: Carriage Return
+					</li>
+					<li>\n: Line Feed
+					</li>
+				</ul>
+				<p>While on Mac/Linux it is marked by \n. So if this is not handled, you might run into some issues in your repo containing windows and Mac/Linux users.
+					</p>
+	
+			</section>
+			<section>
+				<br><br>
+				<h2>To view configurations:</h2>
+					<pre><code  data-trim data-noescape> $ git config --global -e</code></pre>
+			</section>
+		</section>
+		<section>
+			<section>
+				<h2>Getting Help</h2>
+				<p>Get overall</p>
+					<pre><code  data-trim data-noescape>$ git --help</code></pre>
+			
+			</section>
+			<section>
+				<h2>Get full documentation for config help
+				</h2>
+				<pre><code  data-trim data-noescape>$ git --help</code></pre>
+
+			</section>
+			<section>
+				<h2>Get summarized config help and options
+
+				</h2>
+				<pre><code  data-trim data-noescape>$ git config -h</code></pre>
+
+			</section>
+			
+		</section>
+		<section>
+			<h2>Creating a local repository
+			</h2>
+			<p>Let’s create an empty folder called “repo1” and open a terminal session in this directory and run the following command:</p>
+			<pre><code  data-trim data-noescape>
+				$ git init
+				
+			</code></pre>
+			<p>This will initialize “repo1” as a new git repository.
+			</p>
+		</section>
+		<section>
+			<section>
+				<h2>Staging</h2>
+				<p>For our samples, we will be working with simple “*.txt” files and not a specific programming language for simplicity.
+				</p>
+				<p>Let’s create two files “file1.txt” and “file2.txt” and add the text “Hello” and “Good” to the files respectively.
+				</p>
+				<p>The files we just created are still not yet tracked by git. For us to indicate git to track these files we could do either of the following:</p>
+				
+			</section>
+			<section>
+				<p>Adding the files one after another
+				</p>
+				<pre><code  data-trim data-noescape>
+					$ git add file1.txt
+					
+				</code></pre>	
+				<pre><code  data-trim data-noescape>
+					$ git add file2.txt
+					
+				</code></pre>
+
+
+			
+			</section>
+			<section>
+
+				<p>Adding the files all at once</p>
+				<pre><code  data-trim data-noescape>
+					$ git add file1.txt file2.txt
+				</code></pre>
+			</section>
+			<section>
+				<p>Adding all “*.txt” files to be tracked by git</p>
+				<pre><code  data-trim data-noescape>
+					$ git add *.txt
+				</code></pre>
+
+			</section>
+			<section>
+				<p>Adding add untracked files to be tracked by git
+				</p>
+				<pre><code  data-trim data-noescape>
+					$ git add .
+				</code></pre>
+
+			</section>
+		</section>
+		<section>
+			<section>
+				<h2>Committing Files</h2>
+				<p>Before committing to updated or created files, it’s advisable to view what we are permanently writing to our local repository.
+				</p>
+				<pre><code  data-trim data-noescape>
+					$ git status
+				</code></pre>
+	
+			</section>
+			<section>
+				<p>After haven created a snapshot of our project and done with all the updates needed, in other to permanently save the snapshot to our local repository we should run the following command:</p>
+				<pre><code  data-trim data-noescape>
+
+					$ git commit -m “project initial setup with file1.txt and file2.txt”
+				</code></pre>
+			</section>
+			<section>
+				<p>The above command creates the following:
+				</p>
+				<ul>
+					<li>ID: a unique identifier for this snapshot. We can call it a reference number.</li>
+					<li>Message: this is a text message that corresponds to the description of the snapshot to be saved
+					</li>
+					<li>Author: This is the author of the snapshot created. For our case, the author is “main”.
+					</li>
+					<li>Timestamp: This is the timestamp of the snapshot created.
+					</li>
+					<li>Complete Snapshot: These are complete project files in the current working directory and not just what was updated. This is so that we could reverse the repo back to a successful commit.
+					</li>
+				</ul>
+			</section>
+
+
+		</section>
+	
+	
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
 </html>
