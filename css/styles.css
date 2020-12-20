@@ -1,0 +1,53 @@
+.center {
+    display: flex;
+    align-items: center;
+}
+
+.stacknerds-board {
+    border: 3px solid #0e79cd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #eee;
+    font-size: 18px;
+    color: black;
+}
+
+.stacknerds-board h1,
+.stacknerds-board h2,
+.stacknerds-board h3,
+.stacknerds-board h4 {
+    color: black;
+}
+
+
+.stacknerds-board .logo {
+    position: absolute;
+    padding: 2px;
+    bottom: -10px;
+    right: -3px;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #0e79cd;
+    border-radius: 20px;
+    background: #fff;
+}
+
+.stacknerds-board .logo img {
+    margin: 0px;
+    height: 25px;
+    width: 25px;
+    vertical-align: baseline;
+}
+
+.stacknerds-board  pre{
+    padding: 15px;
+    background: #000;
+    border-radius: 3px;
+}
+.stacknerds-board  code{
+    font-size: 25px;
+    background: rgb(0, 0, 0);
+}
+.odd{
+    font-size: 15px;
+}
