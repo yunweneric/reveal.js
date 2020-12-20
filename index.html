@@ -559,15 +559,138 @@
 					</li>
 					<li>Author: This is the author of the snapshot created. For our case, the author is “main”.
 					</li>
-					<li>Timestamp: This is the timestamp of the snapshot created.
-					</li>
-					<li>Complete Snapshot: These are complete project files in the current working directory and not just what was updated. This is so that we could reverse the repo back to a successful commit.
-					</li>
+					
 				</ul>
 			</section>
-
+			<section>
+				<p>The above command creates the following continued ...
+				</p>
+				<ul><li>Timestamp: This is the timestamp of the snapshot created.
+				</li>
+				<li>Complete Snapshot: These are complete project files in the current working directory and not just what was updated. This is so that we could reverse the repo back to a successful commit.
+				</li></ul>
+			</section>
 
 		</section>
+		<section>
+			<h2>Cloning existing git repositories
+			</h2>
+			<p>For this sample test, the link of this repo is below:</p>
+			<p><a href="https://github.com/rash-sandbox/demo">https://github.com/rash-sandbox/demo</a></p>
+			<p>The repo contains a readme file and a greetings.txt demo file
+			</p>
+			<p>To clone the repo with HTTPS, run the following command:</p>
+			<pre><code data-trim data-noescape>
+				$ git clone git@github.com:rash-sandbox/demo.git
+			</code></pre>
+		</section>
+	<section>
+		<section>
+			<h2>Collaboration
+			</h2>
+			<p>Here we are going to see how collaborating is possible.
+			</p>
+			<p>Collaboration with git is thanks to branching and merging.
+			</p>
+			<p>After cloning the remote repo to our working directory we will now create a new branch with the name “rash”. To do that you can run the following command:
+			</p>
+			<pre><code data-trim data-noescape>
+				$ git branch rash				
+			</code></pre>
+		</section>
+		<section>
+			<p>Now to switch from the main branch to the newly created rash branch, run the following command:
+			</p>
+			<pre><code data-trim data-noescape>
+				$ git checkout rash	
+			</code></pre>
+		</section>
+		<section>
+		<p>To create a new branch and checkout to the branch immediately, run the following command:
+		</p>
+			<pre><code data-trim data-noescape>
+				$ git checkout -b rash
+			</code></pre>
+		</section>
+		<section>
+		<p>To check the current working branch, run the following command:</p>
+			<pre><code data-trim data-noescape>
+				$ git branch
+			</code></pre>
+		</section>
+		<section>
+			<p>Now that we are on the “rash” branch, we are going to create a file called “demo.txt” and write “Hello world!!” into it, and save the file. Also, we are going to open the already existing “greetings.txt” file and append a new line “This is an update.” in the file and save.
+			</p>
+			<p>Now let’s check for staged files with the following command.
+			</p>
+			<pre><code data-trim data-noescape>
+				$ git status
+			</code></pre>
+		</section>
+		<section>
+			<p>This will show us two git states:
+			</p>
+			<ul>
+				<li>Modified: This is for the “greetings.txt” file.
+				</li>
+				<li>Untracked: This is for the newly created “demo.txt” file.
+				</li>
+			</ul>
+			<p>Now we are going to stage the updates and commit the changes with the message “Updated greetings.txt file and added demo.txt file.”
+			</p>
+			<pre><code data-trim data-noescape>
+				$ git add .
+			</code></pre>
+			<pre><code data-trim data-noescape>
+				$ git commit -m “Updated greetings.txt file and added demo.txt file.”
+			</code></pre>
+		</section>
+		<section>
+			<p>Now we are going to update our remote repository, with the following command:
+			</p>
+			<pre><code data-trim data-noescape>
+				$ git push origin rash
+			</code></pre>
+			<p>When you run this command and you clone the repo with HTTPS, then you will be prompted for your GitHub username and password for authentication. Now if the maintainer or owner of the repo, that’s me for our demo reviews the code on the rash branch and finds it ok, then we can update the main branch. To do this run the following commands:
+			<p>
+			<pre><code data-trim data-noescape>
+				$ git checkout main
+			</code></pre>
+			<pre><code data-trim data-noescape>
+				$ git merge rash
+			</code></pre>
+		</section>
+	
+	</section>
+	<section>
+		<h2>Rename Branch</h2>
+		<p>To do this, you have to ensure you have no uncommitted changes to the desired branch.
+		</p>
+		<pre><code data-trim data-noescape>
+			$ git branch -m rash sandbox   # will rename rash branch to sandbox
+		</code></pre>
+		<pre><code data-trim data-noescape>
+			$ git branch   # view local git branches
+		</code></pre>
+		<pre><code data-trim data-noescape>
+			$ git branch -m sandbox rash   # rename sandbox branch back to rash
+		</code></pre>
+		<pre><code data-trim data-noescape>
+			$ git branch   # view local git branches
+		</code></pre>
+	</section>
+	<section>
+		<h2>Delete local branch
+		</h2>
+		<p>To do this let’s follow the following commands:
+		</p>
+		<pre><code data-trim data-noescape>
+			$ git branch peter  # creates a new branch peter
+		</code></pre><pre><code data-trim data-noescape>
+			$ git branch    # view all git local branches
+			
+		</code></pre>
+	</section>
 	
 	
       </div>
